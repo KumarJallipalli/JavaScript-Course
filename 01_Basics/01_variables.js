@@ -6,6 +6,7 @@
 */
 
 
+
 const accountId = 123869;
 let accountEmail = "kumar@microsoft.com";
 var accountPassword = "1234567890";
@@ -37,9 +38,21 @@ accountCity = "Pune";
 */
 
 
+
+/**
+ *  let (vs) var (vs) const
+        - If we declare a variable using
+            - const → re-assignment & re-declaration are NOT Possible
+            - let → re-assignment is Possible BUT re-declaration is NOT Possible [ Use this ]
+            - var → Both re-assignment & re-declaration are Possible [ Old Syntax ]
+*/
+
+
+
 /**
  *  Variables declared using "No Keyword" becomes Global variables, but they must be defined/initialized
 */
+
 
 
 // accountId = 125468;     // This gives us error as it is declared using const keyword, hence commneted out
