@@ -87,6 +87,8 @@ console.log(string2[2]);
  *          - includes()    --> Returns if a string contains a specified value [ returns boolean value]
  *          - indexOf()	    --> Returns the index (position) of the first occurrence of a value in a string
  *          - lastIndexOf() --> Returns the index (position) of the last occurrence of a value in a string
+ *          
+ *          - valueOf()     --> Returns the primitive value of a String object 
  * 
  * 
  *      NOTE:   All string methods return a new string. They don't modify the original string.

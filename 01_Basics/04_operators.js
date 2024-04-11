@@ -2,7 +2,7 @@
 console.log( 5 + 5 );       // Addition operator ( + )
 console.log( 5 - 5 );       // Subtraction operator ( - )
 console.log( 5 * 5 );       // Multiplication operator ( * )
-console.log( 5 ** 5 );      // Power operator ( a ** b ) --> a to the power of b [ a^b --> 5^5 == 25 ]
+console.log( 5 ** 5 );      // Power operator ( a ** b ) --> a raised to the power of b [ a^b --> 5^5 == 25 ]
 console.log( 5 / 5 );       // Division operator ( a / b ) --> It gives the exact division with decimals too
 console.log( 2 % 3 );       // Modulus operator ( % ) --> Gives remainder
 
