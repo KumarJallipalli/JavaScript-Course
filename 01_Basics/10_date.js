@@ -92,7 +92,33 @@ console.log(date_string.toJSON());              // returns a date object as a st
         - All the above get methods returns value in number type
         - All the above get methdods return local time only
  */
+let newDate = new Date();
+console.log(newDate.toString());
+console.log(newDate.getMonth() + 1);    // to get the actual month  (or) we can define every month in an array & use it 
+console.log(newDate.getDate());
 
+let arr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+console.log(newDate.getDay());
+console.log(arr[newDate.getDay()]);      // to get the actual weekday name, we used an array
+
+
+/**
+ *  Misselaneous:
+ *      - Date.now() --> returns number of milliseconds since January 1, 1970.
+ */
+let timeStamp = Date.now();
+console.log(timeStamp);                 // returns No. of milliseconds since jan 1st 1970 till now
+
+console.log(date_string.getTime());     // returns No. of milliseconds since jan 1st 1970 till specified date
+
+// How to get the time in seconds
+console.log(Math.floor( Date.now()/1000 ));     // we divided ms with 1000 giving us seconds
+
+// we can customise the .toLocaleString(locale, object) too
+console.log(newDate.toLocaleString());
+console.log(newDate.toLocaleString("en-IN", {dateStyle: "full", hour12: true}));        // only date is returned
+console.log(newDate.toLocaleString("en-IN", {dateStyle: "long", timeStyle:"full", hour12: false})); // both are displayed
+console.log(newDate.toLocaleString("en-US", {month: "narrow"}));       // only month is returned
 
 
 
@@ -114,4 +140,5 @@ console.log(date_string.toJSON());              // returns a date object as a st
                 toLocaleDateString()  // returns only date in local format "2/3/2020"
                 toISOString()         // returns in ISO format "2020-03-02T00:00:00.000Z"
                 toDateString()        // returns only Date from ISO format "Mon Mar 02 2020"
+            - We can customise these methods too
  */
