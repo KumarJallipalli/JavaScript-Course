@@ -72,6 +72,7 @@ console.log(my_arr1.indexOf(13));
 
 /**
  *      array.join(separator) 
+ *          - join() --> used to join all the elements of an array using the seperator & return it as string
  *          - The join() method returns an array as a "string".
             - The join() method does not change the original array.
             - Any separator can be specified. The default is comma (,).

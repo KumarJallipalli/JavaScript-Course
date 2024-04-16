@@ -17,7 +17,8 @@ console.log(arr_concat.unshift(6));     // returns length of the array & inserts
 
 
 /**
- *  The JavaScript spread operator (...) 
+ *  The JavaScript spread operator (...) 0
+ *          - (...) --> it converts all the elements in an array into an independent elements
  *          - allows us to quickly copy all or part of an existing array or object into another array or object.
  *          - mainly used in array & object destructions    [will be discussed later]
 */
@@ -39,7 +40,7 @@ console.log(new_arr1.flat(Infinity));   // concats all the sub-array elements av
 
 
 /**
- *  - The isArray() method returns boolean based on if an "object is an array"
+ *  - The isArray() method returns boolean based on whether an "object is an array"
  *  - Array.isArray() is a static property of the JavaScript Array object.
  *          - You can only use it as Array.isArray().
  *          - Using x.isArray(), where x is an array will return "undefined".
@@ -50,10 +51,35 @@ console.log(Array.isArray("new_arr1"));     // false
 
 
 /**
- *  - The Array.from() method returns an array from any iterable object. 
+ *  - The Array.from() method --> It converts an iterable object into an Array & returns a new array
  *  - Array.from() is a static property of the JavaScript Array object.
  *          - You can only use it as Array.isArray().
  *          - Using x.isArray(), where x is an array will return "undefined".
 */
-console.log(Array.from("new_arr1"));        // converts string [iterab;e object] to an array object
+console.log(Array.from("new_arr1"));        // converts string [iterable object] to an array object
 console.log(typeof Array.from("new_arr1"));        // object
+console.log(Array.from({name: "kumar"}));        // empty array, why..? [since, we haven't mentioned key or value]
+
+
+
+/**
+//  *  - The Array.of() method creates a new array from any number of arguments/variables.
+ *  - The Array.of() method can take any type of arguments.
+ *  - Array.of() is also a static property
+*/
+console.log(Array.of(1, 2, 3));
+console.log(new Array(1, 2, 3));
+
+/**
+ *  - In the above, both the statements returns same o/p, then what is the diff..?
+ *          - Array.of(7) creates an array with a single element, 7, 
+ *          - whereas Array(7) creates an empty array with a length property of 7. [each slot/element is not defined]
+*/
+let var1 = 5
+let var2 = "Kumar"
+let var3 = true
+console.log(Array.of(var1, var2, var3));        // creates array from variable arguments
+
+const new_arr2 = new Array(6);
+console.log(typeof new_arr2[3]);
+console.log(new_arr2);
