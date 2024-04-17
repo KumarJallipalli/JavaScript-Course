@@ -17,7 +17,7 @@ console.log(arr_concat.unshift(6));     // returns length of the array & inserts
 
 
 /**
- *  The JavaScript spread operator (...) 0
+ *  The JavaScript spread operator (...) 
  *          - (...) --> it converts all the elements in an array into an independent elements
  *          - allows us to quickly copy all or part of an existing array or object into another array or object.
  *          - mainly used in array & object destructions    [will be discussed later]

@@ -24,7 +24,7 @@
  *      - Objects created using literals --> Not a Singleton
  *      - Objects created using constructors --> Singleton
 */
-// creating Objects using constructors
+// creating Objects using constructors [Both the below are singleton Objects]
 const Obj_constructor1 = new Object();
 const Obj_constructor2 = Object.create(null);       // This requires an Object or null as argument to define an object
 
@@ -48,7 +48,7 @@ const obj = {
  *          1. using dot (.) operator
  *          2. using square braces []
  *      - But dot operator cannot access the keys which are defined using string format, only [] does
- *      - But to access Objects using square braces, key names must be passed in string format only 
+ *      - But to access Objects using square braces, key names must be passed in s"tring format" only 
 */
 console.log(obj.name);     // No problem in accessing normal keys [i.e., not defined in string format]
 // console.log(obj.full name);     // throws error, since the key name is defined in string format
@@ -71,7 +71,7 @@ console.log(obj);
 
 
 /**
- *  How to ynamically refer variables from outside the object, in an Object..?
+ *  How to dynamically refer variables from outside the object, in an Object..?
  *          - we cannot just use the name of var  --> it treats that name as new name inside the object
  *          - we need to use square braces [] while refering
  *          - And accessing this referring symbol is also different 
@@ -110,12 +110,12 @@ console.log(typeof new_obj2[sym]);          // String   &&  we haven't used any 
 
 
 /**
- *  Object().freeze(obj_name)  --> used to freeze th obj from any modificication
+ *  Object().freeze(obj_name)  --> used to freeze the obj from any modificication
 */
 console.log(obj);
 Object.freeze(obj);
 
-obj.age = 20;           // age woblt be changes, since we freezed the object
+obj.age = 20;           // age won't be changes, since we freezed the object
 console.log(obj);
 
 
@@ -125,7 +125,7 @@ console.log(obj);
 */
 const my_obj = {
     lastname: "Jallipalli",
-    fullname: "Kumar" + this.lastname,  
+    fullname: "Kumar" + this.lastname,          // here this refers to global varibale [which is absent in node env]
     greetings : function() {console.log(`Hello ${this.fullname}`);}
 }
 console.log(my_obj);
