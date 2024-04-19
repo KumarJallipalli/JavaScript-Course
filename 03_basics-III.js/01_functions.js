@@ -29,7 +29,7 @@ console.log(add());
  *  - In the line containing console.log(add());
  *      - 1st it will execute the add function since we used "add()", then it will print the returned value of add()
  *      - But we haven't returned any value from add()..!
- *      - By default all JS functions returns "undefined"
+ *      - But By default all JS functions returns "undefined"
 */
 
 
@@ -39,7 +39,7 @@ console.log(add());
  *          - num1, num2 --> undefined, undefined respectively
  *          - ans = NaN     [since, undefined + undefined = NAN ]
  * 
- *      i.e, why we sometimes give default values to parameters
+ *      i.e, why we sometimes give "default values" to parameters
  *          - ex: function add (num1 = 0, num2 = 0) {...}
  *          - If NO values are passed as arguments, then these default values are taken
  *          - else, whatever the values passed in arguments will overwrite these deafult values
@@ -88,6 +88,31 @@ console.log(multiply(2, 5));    // as we used return statement, instead of "unde
 */
 
 add (2, 8, 9, 5 ,17)        // o/p : 10     [ since except 2st 2 arguments, remaining are ignored ]
+
+
+
+/**
+ *  Functions as expressions:
+ *  -------------------------
+ *      - WKT, JS variables are very powerful, since they can hold any data
+ *      - Similarly, they can hold functions too
+ * 
+ *      - A variable which is holding a function is called as function as expression
+ *              - This is not equal to holding function's returned value, this is holding actual function itself
+ *      - Syntax is also differenet
+ *      
+ *              const func = function (parameters) {            [ we can use "let" also]
+ *                  code block
+ *              }
+ * 
+ *      - we can execute/call the function using variable name only
+ *      - But this doesn't support "hoisting"
+*/
+const addNums = function (num1, num2) {
+    return num1+num2;
+}
+
+console.log(addNums(5, 9, 12));;
 
 
 
