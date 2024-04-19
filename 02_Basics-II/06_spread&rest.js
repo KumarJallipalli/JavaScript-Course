@@ -94,11 +94,12 @@ console.log(updated_correct);
 
 
 /**
- *  Rest:
+ *  Rest (...):
  *  -----
  *      - The Rest parameter is kind of opposite to the spread syntax.
  *      - While spread syntax helps expand/spread elements and properties, the rest parameter helps collect them together.
  *      - the rest parameter is mostly used with destructuring, to consolidate the remaining properties into a new object.
+ *      - And also used in function parameters
 */
 let {age, ...remaining_obj} = user;     // destructured the age & created a new obj with the remaining propeties of user
 console.log(age, remaining_obj);

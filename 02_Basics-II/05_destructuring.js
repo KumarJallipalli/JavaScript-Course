@@ -77,10 +77,18 @@ console.log(surname, fullname, department);
 
 // 3. Giving an alias name to the destructured variables
 let {department: dept} = user;
-console.log(department);        // original name
+console.log(department);        // original name,   but is it fine in giving the o/p instead of error..?
 console.log(dept);              // alias name
 console.log(user.department);   
 console.log(user.dept);         // undefined
+
+// let {department: "dept"} = user
+/**
+ *  let {department: "dept"} = user
+ *          - here, it is throwing error, saying identifier is expected
+ *          - that means, we need to give "var_name" not the "value"
+ *          - here, it will treat like we are trying to assign value to department var instead of renaming
+*/
 
 
 // 4. Destructuring  the nested objects --> let { nested_keyName: { var_name } }
