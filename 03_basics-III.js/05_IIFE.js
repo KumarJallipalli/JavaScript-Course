@@ -20,6 +20,9 @@
     console.log("DB Connection");
 }) ();
 
+namedIIFE();		// throws error, saying namedIIFE is not defined
+namedIIFE() ();		// throws error, saying namedIIFE is not defined
+
 /**
  *  NOTE:
  *          - " ; " is mandatory when we want to execute 2 or more IIFE's
