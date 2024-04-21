@@ -129,11 +129,19 @@ console.log(
 /**
  *  .reduce():
  *  ----------
- *      - The returned value from current iteration will be the "accumulator" of that iteration
+ *      - The reduce() method --> iterates & reduces the array's value to a single value [accumulated value]
+ *      - accumulator --> The value returned by the callbackFn in each iteration 
+ *      - The accumulator from the previous iteration will get's added to the accumulator of the current iteration.
  *      - Hence, The accumulated value will get updated after each iteration
  * 
  *      Syntax:
  *                  array.reduce( function (accumulator, currentValue, currentIndex, arr), initialValue)
+ * 
+ *      - initialValue --> the value to which accumulator is initialized the first time the callback is called.
+ *      - accumulator --> The value returning from the previous callbackFn. 
+ *                          - On the first call, its value is initialValue if initialValue is specified; otherwise its value is array[0].
+ *      - cuurentVlue --> The value of the current element.
+ *                          - On the first call, its value is array[0] if initialValue is specified; otherwise its value is array[1].
 */
 
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -157,3 +165,27 @@ console.log(total);
  *  - Here, we have passed the initialVlaue
  *  - Hence, callback will be executed from 0th element onwards
 */
+
+
+// This reduce is used in calculating the total price of all the items in the shopping cart
+let shoppingCart = [
+    {
+        item: "Mobile Phone",
+        price: 13999
+    },
+    {
+        item: "Mobile Backcase",
+        price: 599
+    },
+    {
+        item: "Mobile Charger",
+        price: 1999
+    },
+    {
+        item: "Extended Warranty",
+        price: 999
+    },
+]
+
+let totalPrice = shoppingCart.reduce( (acc, val) => {return acc + val.price}, 0 )
+console.log(totalPrice);
