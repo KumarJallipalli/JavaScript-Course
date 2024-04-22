@@ -29,7 +29,7 @@
 /**
  *  children property:
  *  ------------------
- *      - The children property returns a collection of an element's child elements.
+ *      - The children property --> returns a collection of an element's child elements.
  *      - It returns a "HTML Collection" Object
 */
 
@@ -83,7 +83,7 @@ console.log(parent.children[3].previousElementSibling.innerHTML);
  *  childNodes property:
  *  -------------------
  *      - "childNodes" property --> returns a collection (NodeList) of an elements's child nodes.
- *      - nodes --> Element nodes, text nodes, and comment nodes.
+ *              - nodes --> Element nodes, text nodes, and comment nodes.
  *      - It returns a "NodeList" object.
 */
 

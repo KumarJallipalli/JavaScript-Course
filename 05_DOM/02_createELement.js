@@ -25,7 +25,7 @@ document.body.appendChild(p_element1);
 
 
 /**
- * Let's create <p> element & add it between the parent div & p-tag
+ * Let's create <p> element & add it inside div tag as a child
 */
 const p_element2 = document.createElement("p");
 
@@ -34,7 +34,7 @@ p_element2.style.backgroundColor = "orange";
 p_element2.style.padding = "10px";
 p_element2.innerText = "Newly created paragraph element added between div & p"
 
-// Attached the p-tag to between div & p-tag
+// Attached the p-tag inside div as a child
 document.querySelector('.parent').appendChild(p_element2);
 
 
