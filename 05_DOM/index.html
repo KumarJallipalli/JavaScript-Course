@@ -1,0 +1,76 @@
+
+<!-- 
+ *  DOM:
+ *  ----
+ *      - DOM -> Document Object Model
+ *      - DOM is a standard object model and programming interface for HTML
+ *              - DOM is an Object Model for HTML.
+ *              - DOM is an API (Programming Interface) for JavaScript
+ *
+ *      - With the DOM only, JavaScript can access, modify, add & delete all the elements of an HTML document.
+ *      - With the DOM only, JavaScript gets all the power it needs to create dynamic HTML:
+-->
+
+<!-- 
+    How does DOM created..?
+        - When a web page is loaded, the browser creates a "Document Object Model" of that page.
+        - The DOM represents an HTML document as a "tree of nodes".
+        - These nodes are objects that you can access using JavaScript.
+    
+        ex: The below HTML code is converted to DOM by browser [when it's 1st loaded in website]
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, laborum?</p>
+    </div>
+</body>
+</html>
+
+<!-- 
+    Window Object:
+    --------------
+        - The window object represents the browser's window.
+        - All global objects, functions, and variables automatically become members of the window object.
+                - Global variables are properties of the window object.
+                - Global functions are methods of the window object.
+                
+        - Even the HTML DOM is a property of the window object:
+                - Window.document -> Returns a reference to the document that the window contains.
+
+        - The window object is a global object, so you can omit it when calling its child object.
+                - i.e., instead of "window.cosole.log("Hello..!")", we can use "console.log("Hello..!")"
+                - similarly, we can use "document.method()" to get the DOM, instead of "window.document.method()"
+-->
+
+
+<!-- 
+    document object:
+    ----------------
+        - The "document" object is the entry point for all HTML elements
+        - It’s called the "Document Object Model" but NOT "Window Object Model" 
+                - because we’re mostly going to work with the "document" object instead of the Window object.
+-->
+
+<!-- 
+    DOM Tree:
+    ---------
+        - The window object is the root/root-node of the DOM tree
+        -       window > document > html > head | body [ and their respective child nodes]
+        - you can access the whole "HTML" Element node using "document.documentElement", 
+        - Access the document "head" using the "document.head" property & the "body" using "document.body"
+-->
+
+
+<!-- 
+    Summary:
+    --------
+        - The DOM is a tree-like structure generated from the HTML file [by browser]
+        - Browser then exposes this DOM as a set of JS objects that we can access, such as window & document objects.
+-->

@@ -37,7 +37,7 @@ for (let ind in str) {
  *          - for-in loops works on objects, arrays & Strings. But NOT on Maps
  *          - It won't throw any error, But we won't get any output in the console
  * 
- *          - for-in won;t work on Maps && for-of won't work on Objects
+ *          - for-in won't work on Maps && for-of won't work on Objects
 */
 // for-of loop in Map
 const map = new Map();
