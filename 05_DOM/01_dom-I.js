@@ -118,8 +118,8 @@ console.log(p_selectors);
 const p_id = document.getElementById("p1")
 console.log(p_id);
 
-p_id.id;                        // returns the id attribute's value
-p_id.className;                 // returns the class attribute's value
+p_id.id;                        // get/set the id attribute's value
+p_id.className;                 // get/set the class attribute's value
 p_id.getAttribute("p1");        // get's the value of the specified attribute
 p_id.setAttribute("p1", "p");   // set's the value of the specified attribute with the new specified attribute
 
