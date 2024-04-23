@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" 
+                src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" 
+                alt="photoshop"></li>
+
+            <li><img width="200px" id="japan" 
+                src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" 
+                alt=""></li>
+
+            <li><img width="200px" id="river" 
+                src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" 
+                alt=""></li>
+
+            <li><img width="200px" id="owl" 
+                src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" 
+                alt="" ></li>
+
+            <li><img width="200px" id="prayer" 
+                src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" 
+                alt="" onclick="alert('Prayer img is Clicked')"></li>
+                <!-- 
+                    1. This onclick HTML event is "Problematic" while scaling applications. Hence don't use
+                -->
+            
+
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+
+   <script>
+
+    /**
+     *  Events:
+     *  -------
+     *      - HTML events are "things" that happen to HTML elements. [ either by browser or by User ]
+     *      - These events are:
+     *              - When a web page has loaded
+     *              - When an image has loaded
+     *              - When an HTML form is submitted
+     *              - When a user clicks the mouse [mouseUp, mouseDown -> together click]
+     *              - When a user clicks the mouse
+     * 
+     *      - JavaScript lets you execute code when "events" are detected. This is called event handling
+     * 
+     *  "Event Handling"  -> executing the JS code whenever an event occurred
+     *      ex: <button onclick="this.innerHTML = Date()">The time is?</button>
+     *          - onclick -> is a HTML event attribute
+     *          - Here, we assigned event to HTML elements using a HTML attributes. 
+    */
+
+    /**
+     *  addEventListener():
+     *  -------------------
+     *      - This method attaches an event handler to an element (or) document, without overwriting existing event handlers..
+     * 
+     *      - element.addEventListener(event, function, Capture)
+     *              - event -> Specified the type of the event/event handler
+     * 
+     *              - function -> to execute whenever the event occurs.
+     *                  - When the event occurs, an "event" object is passed to the function as the first parameter.
+     *                  - event.target -> return the "element" from where the event is triggered/occurred
+     * 
+     *              - capture -> a boolean value specifying whether to use event bubbling [false] or event capturing. [true]
+     * 
+     *  The removeEventListener() -> removes event handlers that have been attached to the addEventListener()
+    */
+
+    // // 2. This is NOT a problematic but this "onclick" event wont give more options comparatively
+    // document.getElementById('owl').onclick = function () { 
+    //     alert("Owl is clicked");
+    // }
+
+    // // 3. addEventListener() gives more more options like stopPropagation(), preventDefault()
+    // document.getElementById("owl").addEventListener("click", (e) => {
+    //     alert("owl is clicked")
+    // })
+
+
+    /**
+     *  NOTE:
+     *          - addEventListener() is more helpful for handling bubling & capturing events
+     *          - It is also very useful in preventing propagations & default behavioors
+     *          - It allows you to add many events to the same element, without overwriting existing events
+     *          - We use "click" during addEventListener(), instead of "onclick" in normal events
+    */
+
+
+    /**
+     *  Event Bubbling or Event Capturing..?
+     *      - There are two ways of event propagation in the HTML DOM, bubbling and capturing.
+     *      - Event Propagation -> It defined the order of Which element's event to be executed
+     * 
+     *      ex: If you have a <p> element inside a <div> element, and the user clicks on the <p> element
+     *      - In bubbling the inner most element's event is handled first and then the outer
+     *      - In capturing the outer most element's event is handled first and then the inner
+    */ 
+
+    // // bubling
+    // document.getElementById("images").addEventListener("click", (e) => {
+    //     console.log("ul elemeny is clicked - bubling");
+    // }, false)
+    // document.getElementById("owl").addEventListener("click", (e) => {
+    //     console.log("owl's img elemeny is clicked - bubling");
+    // }, false)
+
+    // // capturing
+    // document.getElementById("images").addEventListener("click", (e) => {
+    //     console.log("ul elemeny is clicked - capturing");
+    // }, true)
+    // document.getElementById("owl").addEventListener("click", (e) => {
+    //     console.log("owl's img elemeny is clicked - capturing");
+    // }, true)
+
+
+
+    /**
+     *  What if we don't want to display the event of parent's element when we start child's event..?
+     *      - we have a method called -> stopPropagation()
+     * 
+     *  The stopPropagation() -> prevents propagation of the same event from being called
+     *      - It stops the propagation in both ways. i.e.,
+     *      - Propagation means bubbling up to parent elements or capturing down to child elements.
+    */ 
+
+//    document.getElementById("owl").addEventListener("click", (e) => {
+//        e.stopPropagation();
+//        console.log("owl's img elemeny is clicked - bubling stopPropagation");
+//    }, false)
+   
+    
+
+    // /**
+    //  *  We will get 2 diff o/p based on commenting & uncommenting the below events
+    //  *  why..?
+    // */ 
+    // document.getElementById("images").addEventListener("click", (e) => {
+    //     e.stopPropagation();
+    //     console.log("ul elemeny is clicked - stopPropagation");
+    // }, true)
+    
+    // document.getElementById("owl").addEventListener("click", (e) => {
+    //     e.stopPropagation();
+    //     console.log("owl's img elemeny is clicked - capturing stopPropagation");
+    // }, true)
+
+
+
+
+    /**
+     * preventDefault(): 
+     * -----------------
+     *      - preventDefault() -> cancels the event if it is cancelable, 
+     *      - meaning that the default action that belongs to the event will not occur.
+     *      - For example, this can be useful when:
+     *              - Clicking on a "Submit" button, prevent it from submitting a form
+     *              - Clicking on a link, prevent the link from following the URL
+     * 
+     *  The defaultPrevented -> checks whether the preventDefault() method was called for the event.
+     * 
+     *  NOTE: Not all events are cancelable. Use the "cancelable" property to find out if an event is cancelable.
+     *      
+    */
+
+    // make sure the above capturing propagation events are commented
+    document.getElementById("google").addEventListener("click", (e) => {
+        console.log("google link is clicked - but prevented the redirecting");
+        e.preventDefault();
+        console.log(e.defaultPrevented);
+        e.stopPropagation();                // this prevents the logging "ul elemeny is clicked - bubling" from above
+    })
+
+
+
+
+    /**
+     *  Removing the Image, upon clicking it
+    */ 
+
+    document.getElementById("images").addEventListener("click", (e) => {
+        console.log(e.target.tagName === "IMG");        // SInce, e.target.tagName returns IMG instead of img
+        if (e.target.tagName === "IMG") {
+            e.target.parentNode.remove()
+            // the below statement also does the same thing
+            e.target.parentNode.parentNode.removeChild(e.target.parentNode)
+        }
+    })
+
+
+   </script>
+</body>
+<script>
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // }
+
+     // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+    
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+    // }, false)
+   
+    
+    // document.querySelector('#images').addEventListener('click', function(e){
+    //     console.log(e.target.tagName);
+    //     if (e.target.tagName === 'IMG') {
+    //         console.log(e.target.id);
+    //         let removeIt = e.target.parentNode
+    //         removeIt.remove()
+    //     }
+    
+        
+    // })
+    
+    //removeIt.parentNode.removeChild(removeIt)
+</script>
+</html>
