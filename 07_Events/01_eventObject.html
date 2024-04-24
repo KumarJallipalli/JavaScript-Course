@@ -196,6 +196,17 @@
     })
 
 
+    /**
+     *  event.target (vs) event.currentTarget..?
+     *      - The currentTarget -> returns the element to which the event handler has been attached.
+     *      - The target -> returns the element where the event occured.
+     * 
+     *      ex: document.getElementById("images").addEventListener("click", (e) => {} )
+     *              - event handler is attached to -> element with ID - "images" => e.currentTarget = UL
+     *              - if we click on img element -> event occured at img => e.target = IMG
+     */ 
+
+
    </script>
 </body>
 <script>
