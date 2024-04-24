@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API's using XML</title>
+</head>
+<body>
+    
+    <!-- <img style="width: 500px; height: 500px; border: 2px solid orange; display: flex; " src="image" alt="Image of 'hitesh choudhary'">
+    <h2 style="text-align: center;">Followers: </h2> -->
+
+    <script>
+        /**
+         *  XML:
+         *  ----
+         *      - XML -> eXtensible Markup Language, used to "store & transport data"
+         *      - XML doesn't do anything, 
+         *      - It is designed to be self-Explanatory/descriptive
+         *      - The XML language has "NO predefined tags"
+         * 
+         *  - Many computer systems contain data in incompatible formats. 
+         *  - Hence, Exchanging data between incompatible systems is a time-consuming task & often lose data
+         *  - Whereas XML stores data in "plain text format".
+         *  - Hence, provides a software- and hardware-independent way of storing, transporting, and sharing data.
+         *  - So, With XML, data can be available to all kinds of "reading machines" like computers, voice machines, news feeds, etc.
+        */ 
+
+
+        /**
+         *  AJAX:
+         *  -----
+         *      - AJAX => Asynchronous JavaScript And XML.
+         *      - AJAX is not a programming language.
+         *      - AJAX just uses a combination of:
+         *              - A browser built-in XMLHttpRequest object (to request data from a web server)
+         *              - JavaScript and HTML DOM (to display or use the data)
+         * 
+         *      - Similar to How XMLHttpRequest is used to retrive any type of data
+         *      - AJAX can also work on any type of data [Not just XML as name suggested]
+         * 
+         *      - WIth AJAX only, it is possible to update the parts of web page without reloading
+         *      - As it updates the webpage asynchronously by exchanging data with a web server behind the scenes
+        */ 
+
+
+        /**
+         *  XMLHttpRequest:
+         *  ---------------
+         *      - The keystone of AJAX is the XMLHttpRequest object.
+         *      - XMLHttpRequest object can be used to request data from a web server (URL) behind the scenes.
+         *      - i.e., with XHR only, it is possible to update parts of a web page, without reloading the whole page.
+         * 
+         *      - XMLHttpRequest can be used to retrieve any type of data, not just XML
+         * 
+         * 
+         *          new XMLHttpRequest()	        Creates a new XMLHttpRequest object
+         *          open(method,url,async,user,psw)	Specifies the request (method: the request type GET or POST || )
+         *          send()/send(string)	            Sends the request to the server (Used for GET/POST)
+         *          abort()	                        Cancels the current request
+         * 
+         *          readyState	        Holds the status of the XMLHttpReque    [0, 1, 2, 3, 4]
+         *          onreadystatechange	Continuously tracks readyState property (&&) let's you Define & execute a function when the readyState property changes
+         *          responseText	    Returns the response data as a string
+         *          status	            Returns the status-number of a request [like, 202, 404, 403]
+        */ 
+
+        // 1. create a XMLHttpRequest object
+        let xhr = new XMLHttpRequest();
+
+        // 2. specify the request
+        let requestURL = "https://api.github.com/users/hiteshchoudhary"; // to specify in .open()
+        xhr.open("GET", requestURL, true);
+
+        // 3. send the request
+        xhr.send();
+
+        // 4. get the request using onreadystatechange
+        xhr.onreadystatechange = function () {
+            console.log(xhr.readyState);
+            console.log(xhr.status);
+
+            // 5. getting the response & accessing it
+            if(xhr.readyState === 4 && this.status === 200) {
+                // here we will get response in string, so convert it to object
+                let responseObject = JSON.parse(this.responseText)
+                console.log(responseObject.followers);
+
+                // Assignment: display the image & followers in a card
+                let div = document.createElement("div");
+                document.body.appendChild(div);
+                let image = responseObject.avatar_url;
+                // div.setAttribute("style", "width:500px; height:500px; background-color:'black'; border: 2px solid 'orange'; ");
+                div.style.width = "500px"
+                div.style.height = "500px"
+                div.style.border = "2px solid orange";
+                div.style.textAlign = "center"
+                div.style.display = "block"
+                div.style.padding = "10px"
+                div.style.backgroundColor = "teal"
+                div.style.color = "#F1EEDC"
+
+                div.innerHTML = `
+                <img src="${image}" alt="Image of 'hitesh choudhary'">
+                <h2 >Followers: ${responseObject.followers}</h2>
+                `;
+
+            }
+        }
+    </script>
+</body>
+</html>
