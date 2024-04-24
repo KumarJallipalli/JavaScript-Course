@@ -66,3 +66,23 @@ lastLanguage.outerHTML = "<li>C</li>"
 const thirdLanguage = document.querySelector("li:nth-child(3");
 console.log(thirdLanguage);
 thirdLanguage.remove();
+
+/************************************************************************************************/
+
+/**
+ *  removeChild():
+ *  --------------
+ *      - removeChild() --> removes an element's child. [Not node]
+ *              - element.removeChild(node) 
+ *      - It returns the removed element
+ * 
+ *  remove():
+ *  ---------
+ *      - remove() --> removes an element (or) node from the document.
+ *      - It doesn't returns anything
+ * 
+ *  replaceChild():
+ *  ---------------
+ *      - replaceChild() --> replaces a child node with a new node.
+ *              - node.replaceChild(newnode, oldnode)
+*/

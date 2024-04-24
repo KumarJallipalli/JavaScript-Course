@@ -43,7 +43,7 @@
         
     <script>
       let div = document.querySelector(".color");
-      window.addEventListener("keydown", (e) => {
+      window.addEventListener("keypress", (e) => {
         div.innerHTML = `
         <table>
           <tr>
@@ -58,6 +58,15 @@
           </tr>
         </table>
         `
+      })
+
+      div.addEventListener("mousemove", (e) => {
+        div.style.backgroundColor = "green"
+        console.log("mouse pointer moved");
+      })
+      div.addEventListener("mouseout", (e) => {
+        div.style.backgroundColor = "#1c1c1c"
+        console.log("mouse pointer out");
       })
     </script>
   </body>

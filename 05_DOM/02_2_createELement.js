@@ -61,3 +61,33 @@ p_element2.appendChild(addText);
  * 
  *      - Hence, use setAttribute("attribute", "value") --> directly overwrites --> 1 operation
 */
+
+/*************************************************************************************************************/
+
+/**
+ *  insertBefore():
+ *  ---------------
+ *      - insertBefore() --> inserts a child node before an existing child.
+ *      - node.insertBefore(new, existing)
+ *              - new --> The node (element) to insert.
+ *              - existing --> The node (element) to insert before. 
+ *                  [ If "null", it will be inserted at the end. - just like appendChild() ]
+ * 
+ *  NOTE:
+ *          - If the selected node is already present in the tree, It will remove that node & attach to new postion.
+*/
+
+
+
+/**
+ *  insertAdjacentElement():
+ *  ------------------------
+ *      - insertAdjacentElement() -->  inserts a an element into a specified position.
+ * 
+ *      - element.insertAdjacentElement(position, element)
+ *              afterbegin	    After the beginning of the element (i.e., before first child (or) before content)
+ *              afterend	    After the element itself
+ *              beforebegin	    Before the element itself
+ *              beforeend	    Before the end of the element (i.e., after last child (or) after content)
+ *              
+ */

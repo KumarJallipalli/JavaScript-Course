@@ -75,15 +75,15 @@
      *  The removeEventListener() -> removes event handlers that have been attached to the addEventListener()
     */
 
-    // // 2. This is NOT a problematic but this "onclick" event wont give more options comparatively
-    // document.getElementById('owl').onclick = function () { 
-    //     alert("Owl is clicked");
-    // }
+    // 2. This is NOT a problematic but this "onclick" event wont give more options comparatively
+    document.getElementById('owl').onclick = function () { 
+        alert("Owl is clicked");
+    }
 
-    // // 3. addEventListener() gives more more options like stopPropagation(), preventDefault()
-    // document.getElementById("owl").addEventListener("click", (e) => {
-    //     alert("owl is clicked")
-    // })
+    // 3. addEventListener() gives more more options like stopPropagation(), preventDefault()
+    document.getElementById("owl").addEventListener("click", (e) => {
+        alert("owl is clicked")
+    })
 
 
     /**
@@ -105,21 +105,21 @@
      *      - In capturing the outer most element's event is handled first and then the inner
     */ 
 
-    // // bubling
-    // document.getElementById("images").addEventListener("click", (e) => {
-    //     console.log("ul elemeny is clicked - bubling");
-    // }, false)
-    // document.getElementById("owl").addEventListener("click", (e) => {
-    //     console.log("owl's img elemeny is clicked - bubling");
-    // }, false)
+    // bubling
+    document.getElementById("images").addEventListener("click", (e) => {
+        console.log("ul elemeny is clicked - bubling");
+    }, false)
+    document.getElementById("owl").addEventListener("click", (e) => {
+        console.log("owl's img elemeny is clicked - bubling");
+    }, false)
 
-    // // capturing
-    // document.getElementById("images").addEventListener("click", (e) => {
-    //     console.log("ul elemeny is clicked - capturing");
-    // }, true)
-    // document.getElementById("owl").addEventListener("click", (e) => {
-    //     console.log("owl's img elemeny is clicked - capturing");
-    // }, true)
+    // capturing
+    document.getElementById("images").addEventListener("click", (e) => {
+        console.log("ul elemeny is clicked - capturing");
+    }, true)
+    document.getElementById("owl").addEventListener("click", (e) => {
+        console.log("owl's img elemeny is clicked - capturing");
+    }, true)
 
 
 
@@ -132,26 +132,26 @@
      *      - Propagation means bubbling up to parent elements or capturing down to child elements.
     */ 
 
-//    document.getElementById("owl").addEventListener("click", (e) => {
-//        e.stopPropagation();
-//        console.log("owl's img elemeny is clicked - bubling stopPropagation");
-//    }, false)
+    document.getElementById("owl").addEventListener("click", (e) => {
+        e.stopPropagation();
+        console.log("owl's img elemeny is clicked - bubling stopPropagation");
+    }, false)
    
     
 
-    // /**
-    //  *  We will get 2 diff o/p based on commenting & uncommenting the below events
-    //  *  why..?
-    // */ 
-    // document.getElementById("images").addEventListener("click", (e) => {
-    //     e.stopPropagation();
-    //     console.log("ul elemeny is clicked - stopPropagation");
-    // }, true)
+    /**
+     *  We will get 2 diff o/p based on commenting & uncommenting the below events
+     *  why..?
+    */ 
+    document.getElementById("images").addEventListener("click", (e) => {
+        e.stopPropagation();
+        console.log("ul elemeny is clicked - stopPropagation");
+    }, true)
     
-    // document.getElementById("owl").addEventListener("click", (e) => {
-    //     e.stopPropagation();
-    //     console.log("owl's img elemeny is clicked - capturing stopPropagation");
-    // }, true)
+    document.getElementById("owl").addEventListener("click", (e) => {
+        e.stopPropagation();
+        console.log("owl's img elemeny is clicked - capturing stopPropagation");
+    }, true)
 
 
 
@@ -204,7 +204,7 @@
      *      ex: document.getElementById("images").addEventListener("click", (e) => {} )
      *              - event handler is attached to -> element with ID - "images" => e.currentTarget = UL
      *              - if we click on img element -> event occured at img => e.target = IMG
-     */ 
+    */ 
 
 
    </script>

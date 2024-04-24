@@ -96,7 +96,7 @@ console.log(parent.childNodes);
  *  childNodes (vs) children:
  *  -------------------------
  *      - childNodes --> returns child nodes (element nodes, text nodes, and comment nodes).
- *                  - returns a NoseList 
+ *                  - returns a NodeList 
  *      - children --> returns child elements (ignores text and comment nodes).
  *                  - returns a HTML Collection 
 */
