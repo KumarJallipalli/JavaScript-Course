@@ -70,7 +70,8 @@
 
         // 2. specify the request
         let requestURL = "https://api.github.com/users/hiteshchoudhary"; // to specify in .open()
-        xhr.open("GET", requestURL, true);
+        let requestURL2 = "https://api.github.com/users/KumarJallipalli"; 
+        xhr.open("GET", requestURL2, true);
 
         // 3. send the request
         xhr.send();
@@ -100,9 +101,13 @@
                 div.style.backgroundColor = "teal"
                 div.style.color = "#F1EEDC"
 
+                // div.innerHTML = `
+                // <img src="${image}" alt="Image of 'hitesh choudhary'">
+                // <h2 >Followers: ${responseObject.followers}</h2>
+                // `;
                 div.innerHTML = `
                 <img src="${image}" alt="Image of 'hitesh choudhary'">
-                <h2 >Followers: ${responseObject.followers}</h2>
+                <h2 >${responseObject.name}</h2>
                 `;
 
             }
