@@ -60,6 +60,7 @@ console.log(x);     // 5
  *          - We cannot hold IIFE's inside a variable
  *                  - Since, IIFE's are immediately executed, we cannot use variables to execute [ like x() ]
  *          - We can only hold the return values if IIFE's in variables
+ * 			- Unlike regular functions & variables, IIFEs will be removed from the running process once they are executed.
 */
 
 

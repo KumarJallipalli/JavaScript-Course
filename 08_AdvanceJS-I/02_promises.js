@@ -149,9 +149,10 @@ promise3.then((data) => {
     console.log("Always executed");
 })
 
+
+
+
 // refactoring the callback hell code in promises
-
-
 new Promise((resolve) => {
     setTimeout(() => {
         console.log("1st callback executed after 2s");
