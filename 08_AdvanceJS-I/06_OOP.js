@@ -1,6 +1,6 @@
 /**
  *  Does JS have classes..?
- *      - Yes JS does have classes. [introduced in ES6]
+ *      - Yes, JS does have classes. [introduced in ES6]
  *      - But it is primarly a "prototype-based" Language
  *      - JS provided classes [which behind the scene runs on prototype-based ] for syntactical purpose only
  *              - to provide familiar syntax for people coming from OOP languages like java, C++
@@ -63,10 +63,11 @@ console.log(user2);
  *      - creates new instance by constructing a new Object with the template of existing one
  *      - A fn becomes a Constructor fn, by inserting a "new" keyword infront of the fn call
  *      - when we use "new", follwoing happens
- *              1. creates an empty obj {} [referred by this & is called an instance]
- *              2. constructor fn will be executed/called --> creates properties & methods with all the passed arguments
- *              3. returns a new instace of the object [with the help of this]
- *              4. we can use this instace & it doesn't effect the original/others
+ *              1. creates an new obj --> {} [referred by this & is called an instance]
+ *              2. prototype is linked to this obj constructor
+ *              3. constructor is called/executed
+ *              4. returns a new instace of the object [with the help of this]
+ *          These above 4 will be explained in next lecture
 */
 
 /**
@@ -74,6 +75,10 @@ console.log(user2);
  *          - here, the function behavior also changed, 
  *                  - this inside the fn is now an "Empty Obj" --> {}
  *                  - Hence we are filling the empty obj with properties here
+ *          - This is due to the fn became a constructor function
+ * 
+ *  - To add a new property to a constructor, you must add it to the constructor function only
+ *          - You cannot add a new property by name of construction [ex: User.state = "Hyd" --> Not added]
 */
 function User (username, loginCount, isLoggedIn) {
 
@@ -96,6 +101,13 @@ console.log(user4);
 
 // we can print the constructor --> which gives the reference to User fn
 console.log(user4.constructor);
+
+// The instanceof operator --> tests the presence of constructor.prototype in object's prototype chain.
+console.log(user4 instanceof User);
+console.log(user4 instanceof user3);     // Throws error --> Right-hand side of 'instanceof' is not callable
+console.log(user4 instanceof Object);
+
+
 
 
 
