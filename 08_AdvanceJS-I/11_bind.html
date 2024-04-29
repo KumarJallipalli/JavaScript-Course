@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+
+    /**
+     *  - With the bind() method, an object can borrow a method from another object.
+     *  - Sometimes the bind() method has to be used to prevent losing "this". [just like in this ex]
+     */
+
+    class React {
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement
+            document
+                .querySelector('button')
+                // if we miss bind() here, this refers to event [this happens due to the callback fn]
+                .addEventListener('click', this.handleClick.bind(this))
+
+        }
+        handleClick(){
+            console.log("button clicked");
+            /** 
+             *  - here, it will give us "undefined" as the "this" reference is lost  [ due to callback fn ]
+             *  - Actually, "this" is lost & referring to 'document.querySelector('button')' 
+             *  - So, we need to binf the "this" reference to class/object only
+             *  - Hence we use .bind(this) at line 27
+             */
+            console.log(this.server);
+        }
+    }
+
+    const app = new React()
+</script>
+</html>
