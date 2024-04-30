@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure Use-Case</title>
+</head>
+<body style="background-color: black; color: white;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+
+    <script>
+        /**
+         *  Challenge:
+         *      - upon clicking the orange button, background should turn orange
+         *      - upon clicking the green button, background should turn green
+        */ 
+
+        // document.getElementById("orange").onclick = function() {
+        //     document.body.style.backgroundColor = "orange"
+        // }
+        // document.getElementById("green").onclick = function() {
+        //     document.body.style.backgroundColor = "green"
+        // }
+
+        // But the problem comes, when we need to do 10's or 100's of these buttons
+        // because we can't copy & paste this code 10's or 100's time as it denies DRY [Don't Repeat Yourself]
+        // Hence we use functions
+
+        function handleClick (color) {
+            document.body.style.backgroundColor = color
+        }
+
+        // 1. here, we just passed the reference, hence nothing will happen
+        document.getElementById("orange").onclick = handleClick
+
+        // 2. here, we are executing the fn & then assigning it to LHS ==> before clicking the button itself color changed
+        document.getElementById("orange").onclick = handleClick("orange")
+
+        
+        // This is where the "Closure" comes into action
+        // we will modify the hanlde fn to return a fn for click evens [to replicate the closure]
+        function handleClick (color) {
+            function changeColor () {
+                document.body.style.backgroundColor = color
+            }
+            return changeColor;
+        }
+
+        document.getElementById("orange").onclick = handleClick("orange")
+        document.getElementById("green").onclick = handleClick("green")
+
+        // Now, we can create any number of buttons just like this using closures
+        // This is the use case of real world problems using "Closures"
+
+    </script>
+</body>
+</html>

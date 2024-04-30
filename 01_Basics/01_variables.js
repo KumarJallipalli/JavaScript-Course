@@ -50,7 +50,9 @@ accountCity = "Pune";
 
 
 /**
- *  Variables declared using "No Keyword" becomes Global variables, but they must be defined/initialized
+ *  NOTE:
+ *      1. Variables declared using "No Keyword" becomes Global variables, but they must be defined/initialized
+ *      2. Global and local variables with the same name are different variables
 */
 
 
